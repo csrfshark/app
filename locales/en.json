@@ -1,0 +1,70 @@
+{
+    "head": {
+        "title": "CSRFShark"
+    },
+    "request": {
+        "title": "Request",
+        "headControls": {
+            "protocol": "Protocol"
+        },
+        "tailControls": {
+            "clear": "Clear",
+            "urlDecode": "URL Decode",
+            "copy": "Copy"
+        }
+    },
+    "result": {
+        "title": "Result",
+        "headControls": {
+            "technique": "Technique"
+        },
+        "tailControls": {
+            "run": "Run",
+            "download": "Download",
+            "copy": "Copy",
+            "share": "Share"
+        }
+    },
+    "footer": {
+        "version": "Version",
+        "license": "Licenced under the",
+        "homePage": "Home page"
+    },
+    "modal": {
+        "close": "Close",
+        "apply": "Apply",
+        "options": {
+            "title": "Settings",
+            "body": {
+                "language": "Language",
+                "theme": "Theme",
+                "themeOptions": {
+                    "dark": "Dark",
+                    "light": "Light"
+                }
+            }
+        },
+        "share": {
+            "title": "Share",
+            "body": {
+                "copy": "Copy URL",
+                "qrFullscreen": "Show QR code"
+            }
+        },
+        "shareWarning": {
+            "title": "Warning",
+            "body": {
+                "text": "The link that you followed contains information for generating a proof of concept (PoC) cross-site request forgery (CSRF) attack. Please be aware that once you run the CSRF PoC, undesirable actions may be taken on your behalf, and your account on any website may be compromised. Before running the proof of concept, it is imperative that you fully comprehend the actions that will be taken once it is initiated. If someone has instructed you to copy and paste any data here, but you do not fully understand the consequences, please refrain from doing so."
+            }
+        },
+        "firstVisitWarning": {
+            "title": "Legal disclaimer",
+            "body": {
+                "text": "This tool is for educational purpose only. It is illegal to use this program to attack targets without prior mutual consent. It is the end user's responsibility to obey all applicable local, state and federal laws. Developers assume no liability and are not responsible for any misuse or damage cause by this program."
+            }
+        },
+        "shareFullscreenQrCode": {
+            "title": "Fullscreen QR code"
+        }
+    }
+}

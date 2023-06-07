@@ -1,0 +1,70 @@
+{
+    "head": {
+        "title": "CSRFShark"
+    },
+    "request": {
+        "title": "Solicitud",
+        "headControls": {
+            "protocol": "Protocolo"
+        },
+        "tailControls": {
+            "clear": "Limpiar",
+            "urlDecode": "Descodificar URL",
+            "copy": "Copiar"
+        }
+    },
+    "result": {
+        "title": "Resultado",
+        "headControls": {
+            "technique": "Técnica"
+        },
+        "tailControls": {
+            "run": "Iniciar",
+            "download": "Descargar",
+            "copy": "Copiar",
+            "share": "Compartir"
+        }
+    },
+    "footer": {
+        "version": "Versión",
+        "license": "Licencia",
+        "homePage": "Página de inicio"
+    },
+    "modal": {
+        "close": "Cerrar",
+        "apply": "Aplicar",
+        "options": {
+            "title": "Ajustes",
+            "body": {
+                "language": "Idioma",
+                "theme": "Tema",
+                "themeOptions": {
+                    "dark": "Oscuro",
+                    "light": "Claro"
+                }
+            }
+        },
+        "share": {
+            "title": "Compartir",
+            "body": {
+                "copy": "Copiar URL",
+                "qrFullscreen": "Mostrar código QR"
+            }
+        },
+        "shareWarning": {
+            "title": "Advertencia",
+            "body": {
+                "text": "el enlace que ha seguido contiene información para generar un ataque Proof of Concept (PoC) cross-site request forgery (CSRF). Tenga en cuenta que una vez que ejecute el PoC CSRF, acciones no deseadas pueden ser tomadas en su nombre, y su cuenta en cualquier sitio web puede verse comprometida. Antes de ejecutar la prueba de concepto, es imprescindible que comprenda perfectamente las acciones que se llevarán a cabo una vez iniciada. Si alguien le ha indicado que copie y pegue cualquier dato aquí, pero usted no entiende completamente las consecuencias, por favor absténgase de hacerlo."
+            }
+        },
+        "firstVisitWarning": {
+            "title": "Aviso legal",
+            "body": {
+                "text": "Esta herramienta sólo tiene fines educativos. Es ilegal utilizar este programa para realizar ataques sin previo consentimiento mutuo. Es responsabilidad del usuario final obedecer todas las leyes locales, estatales y federales aplicables. Los desarrolladores no asumen ninguna responsabilidad por cualquier mal uso o daño causado por este programa."
+            }
+        },
+        "shareFullscreenQrCode": {
+            "title": "QR a pantalla completa"
+        }
+    }
+}

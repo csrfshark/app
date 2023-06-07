@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en" class="notranslate" translate="no">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSRFShark</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="media/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="media/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="media/favicon/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="media/favicon/favicon-16x16.png">
+    <link rel="manifest" href="media/favicon/site.webmanifest">
+    <link rel="mask-icon" href="media/favicon/safari-pinned-tab.svg" color="#132c48">
+    <link rel="shortcut icon" href="media/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#132c48">
+    <meta name="msapplication-config" content="media/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#132c48">
+    <meta name="msapplication-navbutton-color" content="#132c48">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#132c48">
+
+    <meta name="google" content="notranslate">
+
+    <meta name="description" content="CSRFShark is a utility for manipulating cross-site Request forgery (CSRF) attacks">
+    <meta name="keywords" content="csrfshark, csrf, csrf poc generator, online poc">
+    <meta name="robots" content="index, follow">
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/remixicon.css">
+    <link href="css/select2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/jquery.min.js"></script>
+
+    <script src="js/select2.min.js"></script>
+
+    <script src="js/clipboard.min.js"></script>
+    <script src="js/jquery-qrcode.js"></script>
+    <script src="js/parse-curl.js"></script>
+    <script src="js/Options.js"></script>
+    <script src="js/ResultBuilder.js"></script>
+    <script src="js/RequestBuilder.js"></script>
+    <script src="js/Shared.js"></script>
+
+    <script src="js/i18next.min.js"></script>
+    <script src="js/jquery-i18next.min.js"></script>
+    <script src="js/i18nextHttpBackend.min.js"></script>
+    <script src="js/Internationalization.js"></script>
+
+    <script src="js/Main.js"></script>
+    <script src="js/script.js"></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header_section header_logo">
+            <div class="logo"></div>
+        </div>
+        <div class="header_section header_title">
+            <div class="title">CSRFShark</div>
+            <div class="author">by <a href="https://t.me/f0rb1dd3n0x193" class="author__link">f0rb1dd3n0x193</a></div>
+        </div>
+        <div class="header_section header_settings align-middle">
+            <a href="#" class="settings_button js-options-button">
+                <i class="ri-settings-3-line"></i>
+            </a>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="main_section">
+            <div class="title" data-i18n="request.title">Request</div>
+            <div class="head_controls">
+                <div class="row">
+                    <label for="request-protocol" class="label" data-i18n="request.headControls.protocol"></label>
+                    <select id="request-protocol" class="select js-protocol-select">
+                        <option value="HTTPS">HTTPS</option>
+                        <option value="HTTP">HTTP</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="content">
+                <textarea class="code js-request"
+                    placeholder="POST /login HTTP/1.1&#10;Host: example.local&#10;User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36&#10;Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8&#10;Content-Type: application/x-www-form-urlencoded&#10;&#10;login=admin&password=admin"></textarea>
+            </div>
+
+            <div class="tail_controls">
+                <button class="button js-clear-button">
+                    <i class="ri-delete-bin-7-line button__icon align-middle"></i>
+                    <div class="button__text" data-i18n="request.tailControls.clear"></div>
+                </button>
+                <button class="button js-decode-button">
+                    <i class="ri-arrow-left-right-line button__icon align-middle"></i>
+                    <div class="button__text" data-i18n="request.tailControls.urlDecode"></div>
+                </button>
+                <button class="button js-copy-request-button">
+                    <i class="ri-file-copy-line button__icon align-middle"></i>
+                    <div class="button__text" data-i18n="request.tailControls.copy"></div>
+                </button>
+            </div>
+        </div>
+
+        <div class="main_section">
+            <div class="title" data-i18n="result.title">Result</div>
+            <div class="head_controls">
+                <div class="row">
+                    <label for="response-data-technique" class="label"
+                        data-i18n="result.headControls.technique"></label>
+                    <select id="response-data-technique" class="select js-technique-select">
+                        <option value="FORM">Form</option>
+                        <option value="XMLHTTPREQUEST">XMLHttpRequest</option>
+                        <option value="XMLHTTPREQUESTWITHSTATS">XMLHttpRequest + Stats</option>
+                        <option value="LINK">Link</option>
+                        <option value="IMG">Img</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="content">
+                <textarea class="code js-result" disabled></textarea>
+            </div>
+
+            <div class="tail_controls">
+                <button class="button js-run-button">
+                    <i class="ri-play-line button__icon align-middle"></i>
+                    <div class="button__text" data-i18n="result.tailControls.run"></div>
+                </button>
+                <button class="button js-download-response-button">
+                    <i class="ri-download-2-line button__icon align-middle"></i>
+                    <div class="button__text" data-i18n="result.tailControls.download"></div>
+                </button>
+                <button class="button js-copy-response-button">
+                    <i class="ri-file-copy-line button__icon align-middle"></i>
+                    <div class="button__text" data-i18n="result.tailControls.copy"></div>
+                </button>
+                <button class="button js-share-button">
+                    <i class="ri-share-line button__icon align-middle"></i>
+                    <div class="button__text" data-i18n="result.tailControls.share"></div>
+                </button>
+            </div>
+        </div>
+    </main>
+
+
+    <footer class="footer">
+        <div class="col info">
+            <div class="row">
+                <i class="ri-price-tag-3-line"></i>
+                <span data-i18n="footer.version"></span>: 1.0.0
+            </div>
+
+            <div class="row licence">
+                <i class="ri-open-source-line"></i>
+                <span data-i18n="footer.license"></span> <a href="LICENSE">MIT License</a>
+            </div>
+        </div>
+
+        <div class="col links">
+            <div class="row">
+                <i class="ri-home-2-line"></i>
+                <a href="https://csrfshark.github.io/" data-i18n="footer.homePage"></a>
+            </div>
+            <div class="row">
+                <i class="ri-github-line"></i>
+                <a href="https://github.com/csrfshark/app">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+
+    <div class="modal js-options-modal" style="display: none;">
+        <div class="content">
+            <div class="head">
+                <div class="title" data-i18n="modal.options.title"></div>
+                <a class="close js-dismiss-modal-button" href="#"><i class="ri-close-line"></i></a>
+            </div>
+
+            <div class="body">
+                <div class="group">
+                    <div class="row">
+                        <i class="ri-translate-2"></i>
+                        <div data-i18n="modal.options.body.language"></div>
+                        <select class="select2 options-language" name="language">
+                            <option value="en">English</option>
+                            <option value="ru">Русский</option>
+                            <option value="uk">Українська</option>
+                            <option value="es">Español</option>
+                        </select>
+                    </div>
+
+                    <div class="row">
+                        <i class="ri-contrast-line"></i>
+                        <div data-i18n="modal.options.body.theme"></div>
+
+                        <select class="select2 options-theme">
+                            <option value="light" data-i18n="modal.options.body.themeOptions.light"></option>
+                            <option value="dark" data-i18n="modal.options.body.themeOptions.dark"></option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="controls">
+                <a class="js-dismiss-modal-button" href="#" data-i18n="modal.close"></a>
+                <a class="js-apply-options-modal-button" href="#" data-i18n="modal.apply"></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal js-share-modal" style="display: none;">
+        <div class="content">
+            <div class="head">
+                <div class="title" data-i18n="modal.share.title"></div>
+                <a class="close js-dismiss-modal-button" href="#"><i class="ri-close-line"></i></a>
+            </div>
+
+            <div class="body">
+                <div class="share-group">
+                    <div class="share-row share-url-input-wrapper">
+                        <input type="text" class="share-url-input js-share-url-input" disabled>
+                        <button class="button js-copy-share-url-button">
+                            <i class="ri-file-copy-line button__icon align-middle"></i>
+                            <div class="button__text" data-i18n="modal.share.body.copy"></div>
+                        </button>
+
+                        <button class="button js-fullscreen-share-qr-code-button">
+                            <i class="ri-fullscreen-line button__icon align-middle"></i>
+                            <div class="button__text" data-i18n="modal.share.body.qrFullscreen"></div>
+                        </button>
+                    </div>
+                    <div class="share-row">
+                        <div class="js-share-url-qr-code"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="controls">
+                <a class="js-dismiss-modal-button" href="#" data-i18n="modal.close"></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal js-share-warning-modal" style="display: none;">
+        <div class="content">
+            <div class="head">
+                <div class="title" data-i18n="modal.shareWarning.title"></div>
+                <a class="close js-dismiss-modal-button" href="#"><i class="ri-close-line"></i></a>
+            </div>
+
+            <div class="body">
+                <span data-i18n="modal.shareWarning.body.text"></span>
+            </div>
+
+            <div class="controls">
+                <a class="js-apply-share-warning-modal-button" href="#" data-i18n="modal.apply"></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal js-first-visit-warning-modal" style="display: none;">
+        <div class="content">
+            <div class="head">
+                <div class="title" data-i18n="modal.firstVisitWarning.title"></div>
+                <a class="close js-dismiss-modal-button" href="#"><i class="ri-close-line"></i></a>
+            </div>
+
+            <div class="body">
+                <span data-i18n="modal.firstVisitWarning.body.text"></span>
+            </div>
+
+            <div class="controls">
+                <a class="js-apply-first-visit-warning-modal-button" href="#" data-i18n="modal.apply"></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal js-share-fullscreen-qr-code-modal" style="display: none;">
+        <div class="content">
+            <div class="head">
+                <div class="title" data-i18n="modal.shareFullscreenQrCode.title"></div>
+                <a class="close js-dismiss-fullscreen-share-modal-button" href="#"><i class="ri-close-line"></i></a>
+            </div>
+
+            <div class="body">
+                <div class="share-fullscreen-qr-code js-share-fullscreen-qr-code"></div>
+            </div>
+
+            <div class="controls">
+                <a class="js-dismiss-fullscreen-share-modal-button" href="#" data-i18n="modal.close"></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="loader">
+        <i class="ri-loader-4-line"></i>
+    </div>
+</body>
+
+</html>
