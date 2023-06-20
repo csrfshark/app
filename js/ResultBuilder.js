@@ -61,7 +61,7 @@ class ResultBuilder {
 
         var data = {};
 
-        if (this.dataType == 'UNDEFINED') return false;
+        if (this.dataType == 'UNDEFINED') return '';
 
         switch (this.dataType) {
             case 'HTTP':
