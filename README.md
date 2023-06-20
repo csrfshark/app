@@ -13,7 +13,7 @@ It allows to easily generate a CSRF PoC based on a given HTTP/CURL requests with
 ## 📚 Contents
 - [🚀 Getting started](#--getting-started)
 - [✨ Features](#--features)
-- [🌐 Supported languages](#--languages)
+- [🌐 Supported languages](#--supported-languages)
 - [✅ Supported CSRF PoC techniques](#--supported-csrf-poc-techniques)
 - [👤 Author](#--author)
 - [⚠️ Legal disclaimer](#-️-legal-disclaimer)
