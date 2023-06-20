@@ -12,6 +12,7 @@ It allows to easily generate a CSRF PoC based on a given HTTP/CURL requests with
 
 ## 📚 Contents
 - [🚀 Getting started](#--getting-started)
+- [📖 Usage](#--usage)
 - [✨ Features](#--features)
 - [🌐 Supported languages](#--supported-languages)
 - [✅ Supported CSRF PoC techniques](#--supported-csrf-poc-techniques)
@@ -23,8 +24,15 @@ It allows to easily generate a CSRF PoC based on a given HTTP/CURL requests with
 **`CSRFShark` offers a hosted solution located at https://csrfshark.github.io/app**
 
 If you want to host `CSRFShark` on your local machine, several start options are available:
-- [Download the latest release](https://github.com/csrfshark/app/archive/v1.0.0.zip)
+- [Download the latest release](https://github.com/csrfshark/app/archive/v1.0.1.zip)
 - Clone the repo: `git clone https://github.com/csrfshark/app`
+
+## <a name="usage"></a> 📖 Usage
+This video will take you on a journey into the realm of web security, where you will become proficient in using CSRFShark. CSRFShark is a tool created to streamline the generation, distribution, and verification of Cross-Site Request Forgery (CSRF) payloads. Regardless of whether you are an experienced expert or a novice starting to explore web security, this tutorial is suitable for all levels of expertise. We will guide you through each step, ensuring that you can utilize CSRFShark efficiently. Sit back and enjoy the video!
+
+[EN link](https://youtu.be/xw1YAzFRBYY)
+
+[RU link](https://youtu.be/DcIrluCfkEQ)
 
 ## <a name="features"></a> ✨ Features
 - **Share** - allows you to easily and quickly get a permanent link to the result. All necessary data for PoC will be stored in the URL Hash.
