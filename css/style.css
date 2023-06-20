@@ -78,6 +78,7 @@ input {
 }
 
 .header_section .logo {
+    display: block;
     background-image: var(--logo-url);
     background-size: contain;
     background-repeat: no-repeat;
